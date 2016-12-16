@@ -1,0 +1,3 @@
+---
+- name: restart panda
+  service: name=counting_panda_upstart state=restarted enabled=yes

@@ -1,0 +1,19 @@
+---
+
+ - name: Copy python static panda
+   copy: src=static-panda.py dest=/home/user/static-panda.py mode=a+x
+
+ - name: Create images directory
+   file: path=/home/user/resources state=directory
+
+ - name: Copy the big image
+   copy: src=big.jpg dest=/home/user/resources/big.jpg
+
+ - name: Copy the small image
+   copy: src=small.jpg dest=/home/user/resources/small.jpg
+
+ - name: Copy panda upstart configuration
+   template: src=static_panda_upstart.conf dest=/etc/init/staticpanda.conf mode=a+x
+
+ - name: Ensure my daemon panda is started
+   action: service name=staticpanda state=started

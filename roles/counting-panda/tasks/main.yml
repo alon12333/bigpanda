@@ -1,0 +1,10 @@
+---
+
+ - name: Copy python counting panda
+   copy: src=counting-panda.py dest=/home/user/counting-panda.py mode=a+x
+
+ - name: Copy panda upstart configuration
+   template: src=counting_panda_upstart.conf dest=/etc/init/countingpanda.conf mode=a+x
+
+ - name: Ensure my daemon panda is started
+   action: service name=countingpanda state=started
