@@ -1,0 +1,6 @@
+- name: hosts to install 
+  hosts: linux1
+  remote_user: root
+
+  roles:
+    - counting-panda

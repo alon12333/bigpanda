@@ -1,0 +1,4 @@
+Created by Alon Almog
+
+ - Ansible static and counting panda roles located in roles/tasks and creates a service (upstart) within the desired machine/s
+
